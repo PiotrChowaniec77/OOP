@@ -1,53 +1,56 @@
-const Person = function(name, age) {
-  this.name = name;
-  this.age = age;
-  this.children = [];
-  // this.addChildren = function(name) {
-  //     this.children.push(name)
-  // }
-};
 
-Person.prototype.addChildren = function(name) {
-  this.children.push(name);
-};
 
-const arek = new Person("arek", 20);
-const monika = new Person("monika", 20);
 
-class User {}
+// const Family2 = function(name){
+    //     this.name =name
+    // }
+    // const kowalscy = new Family('kowalscy')
+    // Family2.prototype.addMember = function(){
 
-const marta = new User();
+// }
 
-const darek = new marta.constructor();
+class Family {
+    constructor(name) {
+        this.name =name
+    }
+    addMember() {
 
-function Citizen(country, citizenship) {
-  this.country = country;
-  this.citizenship = citizenship;
-  // this.changeCitizensip = function(changeCiti) {
-  //     this.citizenship = changeCiti
-  // console.log(`Zmiana za pomocą metody w instancji na obywatelstwo ${this.citizenship}`)
-  // }
+    }
+}
+const nowakowie = new Family('nowakowie')
+
+const Family2 = function(){
+
+}
+function Family3(){
+
 }
 
-Citizen.prototype.changeCitizensip = function(changeCiti) {
-  this.citizenship = changeCiti;
-  console.log(
-    `Zmiana za pomocą metody w prototypie na obywatelstwo ${this.citizenship}`
-  );
-};
+class Family4 {
 
-const zenek = new Citizen("Polske", "polskie");
-const marysia = new Citizen("Francja", "niemieckie");
+}
+const Family5 = class {
 
-const arr = [5, 6, 7];
-Array.prototype.delete = function(index) {
-  return this.splice(index, 1);
-};
+}
 
-zenek instanceof Array
-zenek instanceof Object
-zenek instanceof Citizen
+class Family6 {
+    constructor(members, ...names){
+        this.members = members
+        this.names = names
+    }
+    addMember(newMember) {
+        this.names.push(newMember)
+        this.members++
+        console.log(`Dodano ${newMember}`)
 
-Object.getPrototypeOf(arr)
+    }
+    static makeFamily(...members){
+        return members
+    }
+}
 
+const kowalscy = new Family6(3,"piotr", 'Jan', "krzysztof")
+kowalscy.addMember("jaś")
+
+const kwiatkowscy = new Family6(1,"piotr")
 
