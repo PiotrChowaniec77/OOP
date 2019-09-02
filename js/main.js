@@ -1,56 +1,36 @@
-
-
-
-// const Family2 = function(name){
-    //     this.name =name
-    // }
-    // const kowalscy = new Family('kowalscy')
-    // Family2.prototype.addMember = function(){
-
-// }
-
-class Family {
-    constructor(name) {
-        this.name =name
+class Animal{
+    constructor(age, name) {
+        this.age = age
+        this.name = name
     }
-    addMember() {
-
-    }
-}
-const nowakowie = new Family('nowakowie')
-
-const Family2 = function(){
-
-}
-function Family3(){
-
-}
-
-class Family4 {
-
-}
-const Family5 = class {
-
-}
-
-class Family6 {
-    constructor(members, ...names){
-        this.members = members
-        this.names = names
-    }
-    addMember(newMember) {
-        this.names.push(newMember)
-        this.members++
-        console.log(`Dodano ${newMember}`)
-
-    }
-    static makeFamily(...members){
-        return members
+    breathe() {
+        console.log('Zwierze oddycha')
     }
 }
 
-const kowalscy = new Family6(3,"piotr", 'Jan', "krzysztof")
-kowalscy.addMember("jaś")
+const Zwierze = new Animal(2, "Artek")
 
-const kwiatkowscy = new Family6(1,"piotr")
+class Mammal extends Animal {
+    constructor(age, name, hairs){
+        super(age, name)
+        this.hairs = hairs
+    }
+    drinkMilk(){
+        console.log("Ssaki piją mleko")
+    }
+}
 
+const ssak = new Mammal(3, "Maks", "blond")
+
+
+class Human extends Mammal {
+    constructor(age, name, hairs, language){
+        super(age, name, hairs)
+        this.language = this.language
+    }
+    speak(){
+        console.log("człowiek mówi")
+    }
+}
+
+const człowiek = new Human(34, "Roman", "ciemne", "polski")
