@@ -1,36 +1,51 @@
-class Animal{
-    constructor(age, name) {
-        this.age = age
-        this.name = name
-    }
-    breathe() {
-        console.log('Zwierze oddycha')
+// const szarik = {
+//     children: ['fafik', 'żaba'],
+//     showChildren: function() {
+//         this.children.forEach(function(child, index){
+//             console.log(this.children[index])
+//         })
+//     }
+// }
+
+
+// const szarik = {
+//     children: ['fafik', 'żaba'],
+//     showChildren: function() {
+//         const that = this
+//         this.children.forEach(function(child, index){
+//             console.log(that.children[index])
+//         })
+//     }
+// }
+
+
+// const szarik = {
+//     children: ['fafik', 'żaba'],
+//     showChildren: function() {
+//         for (item of this.children) {
+//             console.log(item)
+//         }
+//     }
+// }
+
+// const szarik = {
+//     children: ['fafik', 'żaba'],
+//     showChildren: function() {
+
+//         this.children.forEach((child, index) => {
+//             console.log(this.children[index])
+//         })
+//     }
+// }
+
+const szarik = {
+    children: ['fafik', 'żaba'],
+    showChildren: function() {
+
+        this.children.forEach(function(child, index) {
+            console.log(this.children[index])
+        }.bind(this))
     }
 }
 
-const Zwierze = new Animal(2, "Artek")
-
-class Mammal extends Animal {
-    constructor(age, name, hairs){
-        super(age, name)
-        this.hairs = hairs
-    }
-    drinkMilk(){
-        console.log("Ssaki piją mleko")
-    }
-}
-
-const ssak = new Mammal(3, "Maks", "blond")
-
-
-class Human extends Mammal {
-    constructor(age, name, hairs, language){
-        super(age, name, hairs)
-        this.language = this.language
-    }
-    speak(){
-        console.log("człowiek mówi")
-    }
-}
-
-const człowiek = new Human(34, "Roman", "ciemne", "polski")
+szarik.showChildren()
